@@ -43,7 +43,7 @@ writeFiles = (bundles, sprockets, tmpPath) ->
 # Watch path for changes and write out all the bundles to tmp dir
 watchForChanges = (config, sprockets, tmpPath) ->
   for path in config.sprocketsPaths
-    Chokidar.watch(path, persistent: true)
+    Chokidar.watch(path)
       .on 'change', ->
         writeFiles(config.sprocketsBundles, sprockets, tmpPath)
 
